@@ -4,6 +4,7 @@ import Registration from './components/Registration';
 import HomePage from './components/HomePage';
 import { BrowserRouter as Router, Route,  Routes } from 'react-router-dom';
 import Login from './components/Login';
+import BuyMain from './components/BuyMain';
 //import Registration from './Registration';
 
 
@@ -12,7 +13,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/registration" element={<Registration/>} />
-        <Route path="/home" element={<HomePage/>} />
+        <Route path="/home" element={<HomePage/>} />        
+        <Route path="/buy" element={<BuyMain/>} />
         <Route path="/" element={<Login/>} />
       </Routes>
     </Router>

@@ -4,7 +4,7 @@ import './../App.css';
 function Header() {
     return (
         
-            <div className="container flex justify-between py-4 mx-auto bg-purple-700 border-purple-600 rounded shadow-lg shadow-purple-800 ">
+            <div className="sticky top-0 container flex justify-between py-4 mx-auto bg-purple-700 border-purple-600 rounded shadow-lg shadow-purple-800 ">
                 <div className="flex items-center">
                     <img src="/odiben.jpg" className="h-20 w-20 mx-6" alt="OdiBen Logo" />
                     <h3 className="text-2xl font-medium text-white">OdiBen</h3>
