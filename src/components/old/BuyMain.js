@@ -1,23 +1,34 @@
-import React from 'react';
-import Header from './Header';
-import FilterSidebar from './FilterSidebar';
-import OngoingAuctions from './OngoingAuctions'
+import React from "react";
+import Header from "./Header";
+import FilterSidebar from "./FilterSidebar";
+import OngoingAuctions from "./OngoingAuctions";
 
 function BuyMain() {
   return (
-    <div className='min-h-screen flex flex-col'>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <div className='flex flex-row flex-1'>
-        <div className='w-64 flex-shrink-0'>
+      <div className="flex flex-row flex-1">
+        <div className="w-64 flex-shrink-0">
           <FilterSidebar />
         </div>
-        <div className='w-full p-4'>
-
-        <div className="relative p-5">
+        <div className="w-full p-4">
+          <div className="relative p-5">
             <div className="fixed w-full max-w-screen-md  right-0">
               <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg className="w-4 h-4 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                <svg
+                  className="w-4 h-4 text-black"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                  />
                 </svg>
               </div>
               <input

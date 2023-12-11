@@ -1,22 +1,22 @@
 //import logo from './logo.svg';
-import './App.css';
-import Registration from './components/Registration';
-import HomePage from './components/HomePage';
-import { BrowserRouter as Router, Route,  Routes } from 'react-router-dom';
-import Login from './components/Login';
-import BuyMain from './components/BuyMain';
-//import Registration from './Registration';
-
+import "./App.css";
+import Home from "./pages/Home/Home";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./pages/Login/Login";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
-        <Route path="/registration" element={<Registration/>} />
-        <Route path="/home" element={<HomePage/>} />        
-        <Route path="/buy" element={<BuyMain/>} />
-        <Route path="/" element={<Login/>} />
+        <Route path="/login" element={<Login />} />
+        {/* <Route path="/registration" element={<Registration />} />
+        <Route path="/buy" element={<BuyMain />} /> */}
+        <Route path="/" element={<Home />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

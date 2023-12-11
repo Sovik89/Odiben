@@ -4,15 +4,15 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -21,11 +21,12 @@ code {
   padding: 20px;
   text-align: center;
   border-radius: 10px;
-  
+  height: 200px;
+  width: 150px;
 }
 .productsWrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   margin-top: 20px;
 }
@@ -43,10 +44,10 @@ code {
 
 .btn:hover {
   background: purple;
-  color:white
+  color: white;
 }
 
-.remove-btn{
+.remove-btn {
   border: none;
   outline: none;
   background: gold;
@@ -58,7 +59,7 @@ code {
   transition: all 0.3s ease-in-out;
 }
 
-.remove-btn:hover{
+.remove-btn:hover {
   background-color: red;
 }
 
@@ -68,12 +69,10 @@ code {
 .cartCount {
   font-weight: bold;
   text-transform: uppercase;
-  margin-left: 40px;
 }
 .navLink {
   text-decoration: none;
   color: black;
-  margin-left: 20px;
 }
 
 .cartCard {
