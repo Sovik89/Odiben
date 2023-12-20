@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "./../public/images/odiben.jpg";
+import Logo from "./../../public/images/odiben.jpg"
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
