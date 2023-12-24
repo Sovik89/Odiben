@@ -1,5 +1,5 @@
 //import { message } from "antd";
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Home from "../pages/Home/Home";
@@ -12,7 +12,7 @@ import { SetUser } from "../redux/usersSlice";
 import { HideLoading, ShowLoading } from "../redux/loadersSlice";
 
 function ProtectedRoute({ children }) {
-  console.log("Inside Protected Route")
+  console.log("Inside Protected Route");
   const { user } = useSelector((state) => state.users);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -21,13 +21,13 @@ function ProtectedRoute({ children }) {
     try {
       dispatch(ShowLoading());
       const response = await GetCurrentUser();
-      console.log("Inside Protected Route current user",response)
+      console.log("Inside Protected Route current user", response);
       dispatch(HideLoading());
       if (response.success) {
         dispatch(SetUser(response.data));
       } else {
         dispatch(SetUser(null));
-        console.log(response.message)
+        console.log(response.message);
         //window.alert(response.message);
         localStorage.removeItem("token");
         navigate("/login");
@@ -37,7 +37,7 @@ function ProtectedRoute({ children }) {
       dispatch(SetUser(null));
       window.alert(error.message);
     }
- };
+  };
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -45,13 +45,10 @@ function ProtectedRoute({ children }) {
     } else {
       navigate("/login");
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
-    user && 
-    <Home/>
-    );
+  return <React.Fragment>{user && children}</React.Fragment>;
 }
 
 export default ProtectedRoute;

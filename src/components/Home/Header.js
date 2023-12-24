@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Logo from "./../../public/images/odiben.jpg"
+import { Link, NavLink } from "react-router-dom";
+import Logo from "./../../public/images/odiben.jpg";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -11,13 +11,17 @@ function Header() {
       <div className="logo w-1/6 flex justify-center">
         <img src={Logo} height="32px" width="32px" alt="logo" />
       </div>
-      <nav className="menus w-3/6">
+      <nav className="menus w-3/6 hidden md:block">
         <div className="space-x-8">
-          <Link to="">About Us</Link>
-          <Link to="">Blogs</Link>
-          <Link to="">Our Team</Link>
-          <Link to="">Home</Link>
-          <Link to="">Contact Us</Link>
+          <NavLink to="/" className="py-[0.5rem]">
+            Home
+          </NavLink>
+          <NavLink to="/blogs" className="py-[0.5rem]">
+            Blogs
+          </NavLink>
+          <NavLink to="/about" className="py-[0.5rem]">
+            About Us
+          </NavLink>
         </div>
       </nav>
       <div className="icons flex justify-evenly w-2/6 text-purple-800 text-2xl">

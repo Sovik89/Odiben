@@ -27,8 +27,10 @@ function ViewPort() {
   }
   return (
     <div className="productsWrapper">
-      {products.map((product) => {
-        return (
+      {products.length == 0 ? (
+        <h1>No Products Found</h1>
+      ) : (
+        products.map((product) => (
           <div key={product.id} className="card">
             <img src={product.image} alt={product.title} />
             <h6>{product.title}</h6>
@@ -37,8 +39,8 @@ function ViewPort() {
               Submit your Bid
             </button>
           </div>
-        );
-      })}
+        ))
+      )}
     </div>
   );
 }

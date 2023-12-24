@@ -4,8 +4,8 @@ import { LoginUser } from "../../apicalls/user";
 //import odiben from '../../public/odiben.jpg'
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -16,9 +16,9 @@ function Login() {
         email,
         password,
       });
-      console.log("Inside Login again===>",response);
+      // console.log("Inside Login again===>",response);
       if (response.success) {
-        console.log("Inside Login again csuccess===>",response);
+        // console.log("Inside Login again csuccess===>",response);
         localStorage.setItem("token", response.data);
         //window.alert(response.message);
         navigate("/");
@@ -28,10 +28,10 @@ function Login() {
     } catch (err) {
       console.log(err);
     }
-  }
+  };
   return (
-    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-      <div className="w-full p-6 m-auto bg-white border-t border-purple-600 rounded shadow-lg shadow-purple-800/50 lg:max-w-md">
+    <div className="relative flex items-center justify-center overflow-hidden h-[100vh]">
+      <div className="w-full p-6 mx-auto bg-white border-t border-purple-600 rounded shadow-lg shadow-purple-800/50 lg:max-w-md">
         <div className="flex items-center justify-center ">
           <img src="/odiben.jpg" className="h-20 w-20" alt="OdiBen Logo" />
         </div>
@@ -41,14 +41,19 @@ function Login() {
 
         <form className="mt-6" onSubmit={handleSubmit}>
           <div className="flex">
-            <label for="email" className="self-center w-1/4 text-m text-gray-800">
+            <label
+              for="email"
+              className="self-center w-1/4 text-m text-gray-800"
+            >
               Email
             </label>
             <input
               type="email"
               name="email"
               value={email}
-              onChange={(e) => { setEmail(e.target.value); }}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
               className="w-3/4 px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
@@ -64,17 +69,17 @@ function Login() {
                 type="password"
                 name="password"
                 value={password}
-                onChange={(e) => { setPassword(e.target.value); }}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
                 className="w-3/4 px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
             <Link to="#" className="text-xs text-gray-600 hover:underline">
-              Forget Password?
+              Forgot Password?
             </Link>
             <div className="mt-6">
-              <button
-                
-                className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
+              <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
                 Login
               </button>
             </div>
