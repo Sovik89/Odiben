@@ -12,6 +12,7 @@ import Footer from "./components/Home/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
 import About from "./components/About/About";
 import Blogs from "./components/Blogs/Blogs";
+import Admin from "./pages/Admin/Admin"
 
 function App() {
   return (
@@ -55,6 +56,18 @@ function App() {
             </ProtectedRoute>
           }
         />
+          <Route
+          path="/admin-dashboard"
+          element={
+            <ProtectedRoute>
+              <React.Fragment>
+                <Header />
+                <Admin />
+                <Footer />
+              </React.Fragment>
+            </ProtectedRoute>
+          }
+         />
       </Routes>
     </Router>
   );
