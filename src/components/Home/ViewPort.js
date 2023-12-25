@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Card from "../Card/Card";
 
 function ViewPort() {
   const [products, setProducts] = useState([]);
@@ -27,18 +28,19 @@ function ViewPort() {
   }
   return (
     <div className="productsWrapper">
-      {products.length == 0 ? (
+      {products.length === 0 ? (
         <h1>No Products Found</h1>
       ) : (
         products.map((product) => (
-          <div key={product.id} className="card">
-            <img src={product.image} alt={product.title} />
-            <h6>{product.title}</h6>
-            <div>Price: $ {product.price}</div>
-            <button className="btn" onClick={() => alert("WIP")}>
-              Submit your Bid
-            </button>
-          </div>
+          // <div key={product.id} className="card">
+          //   <img src={product.image} alt={product.title} />
+          //   <h6>{product.title}</h6>
+          //   <div>Price: $ {product.price}</div>
+          //   <button className="btn" onClick={() => alert("WIP")}>
+          //     Submit your Bid
+          //   </button>
+          // </div>
+          <Card product={product}/>
         ))
       )}
     </div>
