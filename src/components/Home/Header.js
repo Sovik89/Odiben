@@ -13,7 +13,7 @@ function Header() {
   const { user } = useSelector((state) => state.users);
   const navigate=useNavigate();
   return (
-    <header className="header_container flex justify-around items-center w-[100vw] bg-white p-2 shadow-md sticky top-0 left-0">
+    <header className="header_container flex justify-around items-center w-[100vw] bg-white p-2 shadow-md sticky top-0 left-0 z-50">
       <div className="logo w-1/6 flex justify-center">
         <img src={Logo} height="32px" width="32px" alt="logo" />
       </div>
