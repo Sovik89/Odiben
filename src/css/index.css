@@ -1,3 +1,19 @@
 .active {
   border-bottom: 2px solid purple;
 }
+.filter-active .hamburger-line:nth-child(1) {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+.filter-active .hamburger-line:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+.filter-active .hamburger-line:nth-child(2) {
+  visibility: hidden;
+}
+.filter-active .hamburger-line:nth-child(1),
+.filter-active .hamburger-line:nth-child(2),
+.filter-active .hamburger-line:nth-child(3) {
+  transition: transform;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
