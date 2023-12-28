@@ -13,6 +13,11 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import About from "./components/About/About";
 import Blogs from "./components/Blogs/Blogs";
 import Admin from "./pages/Admin/Admin"
+import Profile from "./pages/Profile/Profile";
+import EditProfile from "./pages/Profile/EditProfile";
+import MyItems from "./pages/Profile/MyItems";
+import AdminProfile from "./pages/Admin/AdminProfile";
+import EditAdminProfile from "./pages/Admin/EditAdminProfile";
 
 function App() {
   return (
@@ -63,6 +68,66 @@ function App() {
               <React.Fragment>
                 <Header />
                 <Admin />
+                <Footer />
+              </React.Fragment>
+            </ProtectedRoute>
+          }
+         />
+         <Route
+          path="/my-profile"
+          element={
+            <ProtectedRoute>
+              <React.Fragment>
+                <Header />
+                <Profile />
+                <Footer />
+              </React.Fragment>
+            </ProtectedRoute>
+          }
+         />
+         <Route
+          path="/edit-profile"
+          element={
+            <ProtectedRoute>
+              <React.Fragment>
+                <Header />
+                <EditProfile />
+                <Footer />
+              </React.Fragment>
+            </ProtectedRoute>
+          }
+         />
+         <Route
+          path="/admin-profile"
+          element={
+            <ProtectedRoute>
+              <React.Fragment>
+                <Header />
+                <AdminProfile />
+                <Footer />
+              </React.Fragment>
+            </ProtectedRoute>
+          }
+         />
+         <Route
+          path="/edit-admin-profile"
+          element={
+            <ProtectedRoute>
+              <React.Fragment>
+                <Header />
+                <EditAdminProfile />
+                <Footer />
+              </React.Fragment>
+            </ProtectedRoute>
+          }
+         />
+         <Route
+          path="/my-items"
+          element={
+            <ProtectedRoute>
+              <React.Fragment>
+                <Header />
+                <MyItems />
                 <Footer />
               </React.Fragment>
             </ProtectedRoute>

@@ -5,7 +5,7 @@ function Card({ product }) {
   return (
     <div
       key={product.id}
-      className="card-container w-full max-w-sm bg-white border rounded-lg shadow border-purple-500 relative top-0 left-0"
+      className="card-container w-full max-w-sm bg-white border rounded-lg shadow shadow-lg shadow-purple-800/50 border-purple-500 relative top-0 left-0"
     >
       <Link to="#">
         <img
