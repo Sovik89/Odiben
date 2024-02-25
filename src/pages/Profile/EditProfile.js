@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal  from 'react-modal';
 import ChangePasswordModal from '../../modals/ChangePasswordModal';
+import { useSelector } from 'react-redux';
 
 const customStyles = {
   content: {
@@ -14,12 +15,13 @@ const customStyles = {
 };
 
 const EditProfile = () => {
+  const {user}=useSelector(state=>state.users);
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: '',
-    address: '',
+    firstName: user.firstName,
+    lastName: user.lastName,
+    email: user.email,
+    phoneNumber: user.phoneNumber,
+    address: user.address,
     password: '',
     newPassword: '',
     profileImage: null,
@@ -91,6 +93,7 @@ const EditProfile = () => {
             type="text"
             id="firstName"
             name="firstName"
+            value={formData.firstName}
             onChange={handleChange}
             className="mt-1 p-2 w-full border rounded-md"
           />
@@ -103,6 +106,7 @@ const EditProfile = () => {
             type="text"
             id="lastName"
             name="lastName"
+            value={formData.lastName}
             onChange={handleChange}
             className="mt-1 p-2 w-full border rounded-md"
           />
@@ -115,6 +119,7 @@ const EditProfile = () => {
             type="email"
             id="email"
             name="email"
+            value={formData.email}
             onChange={handleChange}
             className="mt-1 p-2 w-full border rounded-md"
           />
@@ -128,6 +133,7 @@ const EditProfile = () => {
             type="tel"
             id="phoneNumber"
             name="phoneNumber"
+            value={formData.phoneNumber}
             onChange={handleChange}
             className="mt-1 p-2 w-full border rounded-md"
           />
@@ -140,6 +146,7 @@ const EditProfile = () => {
             type="tel"
             id="address"
             name="address"
+            value={formData.address}
             onChange={handleChange}
             className="mt-1 p-2 w-full border rounded-md"
           />

@@ -15,9 +15,11 @@ import Blogs from "./components/Blogs/Blogs";
 import Admin from "./pages/Admin/Admin"
 import Profile from "./pages/Profile/Profile";
 import EditProfile from "./pages/Profile/EditProfile";
-import MyItems from "./pages/Profile/MyItems";
+import MyItems from "./pages/Profile/MyItems/MyItems";
 import AdminProfile from "./pages/Admin/AdminProfile";
 import EditAdminProfile from "./pages/Admin/EditAdminProfile";
+import Wallet from "./pages/Wallet/Wallet";
+import CreateItem from "./pages/Profile/MyItems/CreateItem";
 
 function App() {
   return (
@@ -128,6 +130,30 @@ function App() {
               <React.Fragment>
                 <Header />
                 <MyItems />
+                <Footer />
+              </React.Fragment>
+            </ProtectedRoute>
+          }
+         />
+         <Route
+          path="/create-item"
+          element={
+            <ProtectedRoute>
+              <React.Fragment>
+                <Header />
+                <CreateItem />
+                <Footer />
+              </React.Fragment>
+            </ProtectedRoute>
+          }
+         />
+         <Route
+          path="/my-wallet"
+          element={
+            <ProtectedRoute>
+              <React.Fragment>
+                <Header />
+                <Wallet />
                 <Footer />
               </React.Fragment>
             </ProtectedRoute>

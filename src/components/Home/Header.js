@@ -42,13 +42,24 @@ function Header() {
       </nav>
       <div className="icons flex justify-evenly w-2/6 text-purple-800 text-2xl">
         <div className="wallet">
-          {!user.isAdmin ? <AccountBalanceWalletIcon /> : ""}
+          {!user.isAdmin ? <AccountBalanceWalletIcon 
+                             onClick={()=>{
+                              navigate("/my-wallet");
+                             }} /> : ""}
         </div>
         <div className="wishlist">
-          <FavoriteBorderIcon />
+        {!user.isAdmin ? <FavoriteBorderIcon  
+                             onClick={()=>{navigate("/my-items");
+                              
+                             }} /> : ""}
+          
         </div>
         <div className="cart">
-          <ShoppingCartIcon />
+        {!user.isAdmin ? <ShoppingCartIcon 
+                             onClick={()=>{
+                              alert("Shooping cart is in progress")
+                             }} /> : ""}
+           
         </div>
         <div className="profile">
           <AccountCircleIcon
